@@ -143,13 +143,12 @@ main {
       --size:clamp(20px,1.5vw,50px);
       display: block;
       position: absolute;
-      width: var(--size);
-      height: var(--size);
+      width:2rem;
+      height:2rem;
       :nth-child(1){
-        margin-left: 1422%;
-        margin-top: 5%;
+        margin-left: 1273%;
       }
-      animation: scale 7000ms ease infinite;
+      animation: scale 3500ms ease linear;
       svg{
         display: block;
         width: 100%;
