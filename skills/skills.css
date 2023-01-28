@@ -17,6 +17,10 @@ nav {
   overflow: hidden;
 }
 
+.rubik-font {
+  font-family: "Rubik", sans-serif;
+}
+
 #nav-links {
   display: flex;
   flex-direction: row;

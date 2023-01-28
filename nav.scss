@@ -1,4 +1,5 @@
-body[data-nav="true"] > main {
+
+  body[data-nav="true"] > main {
     transform: translateY(-50%);
   }
   
@@ -16,7 +17,9 @@ body[data-nav="true"] > main {
     z-index: 1;
     overflow: hidden;
   }
-  
+  .rubik-font {
+    font-family: "Rubik", sans-serif;
+    }
   #nav-links {  
     display: flex;
     flex-direction: row;
