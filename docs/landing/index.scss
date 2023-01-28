@@ -1,4 +1,4 @@
-@import "variables";
+@import "../../variables";
 
 *{
   margin: 0;
@@ -145,10 +145,11 @@ main {
       position: absolute;
       width: var(--size);
       height: var(--size);
-      
-      left: var(--star-left);
-      top:var(--star-top);
-      animation: scale 700ms linear infinite;
+      :nth-child(1){
+        margin-left: 1422%;
+        margin-top: 5%;
+      }
+      animation: scale 7000ms ease infinite;
       svg{
         display: block;
         width: 100%;
