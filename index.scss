@@ -1,4 +1,4 @@
-@import "../variables";
+@import "variables";
 
 *{
   margin: 0;
@@ -100,7 +100,7 @@
 }
 
 main {
-  background-image: url("../landing/background.jpg");
+  background-image: url("background.jpg");
   background-position: center 0%;
   background-size: cover;
   height: 100vh;
@@ -234,7 +234,7 @@ body[data-nav="true"] > nav > #nav-links{
   bottom: 3rem;
   transform: translateX(-50%);
   background-color: rgb(25,25,25);
-  background-image: url("../landing/arrow.png");
+  background-image: url("arrow.png");
   background-position: center;
   background-size: cover;
   background-image: none;
