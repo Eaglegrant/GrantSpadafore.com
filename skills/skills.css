@@ -1,0 +1,173 @@
+body[data-nav=true] > main {
+  transform: translateY(-50%);
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 50vh;
+  width: 100%;
+  align-items: center;
+  position: absolute;
+  bottom: 0px;
+  left: 0%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+#nav-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-self: flex-start;
+  gap: 2rem;
+  margin-top: 2rem;
+  align-items: center;
+  transform: translateY(70%) scale(0.9);
+  transition: transform 500ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
+}
+#nav-links .nav-link {
+  text-decoration: none;
+}
+#nav-links .nav-link :hover:nth-child(1), #nav-links .nav-link :hover:nth-child(2) {
+  transform: scale(1.1);
+  transition: transform 300ms;
+}
+#nav-links .nav-link :hover:nth-child(1) .nav-link-label, #nav-links .nav-link :hover:nth-child(2) .nav-link-label {
+  transform: scale(1.1);
+}
+
+.nav-link-label {
+  color: white;
+  font-size: 1.25rem;
+  margin: 0rem;
+  transition: transform 300ms;
+  text-transform: uppercase;
+}
+
+.nav-link-image {
+  width: 22vw;
+  aspect-ratio: 1.8/1;
+  border: 1px solid red;
+  border-radius: 0.5rem;
+  transform: scale(1);
+  transition: transform 300ms;
+  margin-top: 0.75rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.nav-link-image :hover {
+  border: 5px solid red;
+}
+
+body[data-nav=true] > nav > #nav-links {
+  transform: translateY(0%) scale(1);
+}
+
+#nav-toggle {
+  height: 5rem;
+  width: 5rem;
+  position: fixed;
+  z-index: 3;
+  left: 50%;
+  bottom: 3rem;
+  transform: translateX(-50%);
+  background-color: rgb(25, 25, 25);
+  background-image: url("arrow.png");
+  background-position: center;
+  background-size: cover;
+  background-image: none;
+  border: none;
+  border-radius: 5rem;
+  outline: none;
+  box-shadow: 0rem 0rem 4rem rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  transition: transform, background-color;
+  transition-timing-function: ease;
+  transition-duration: 400ms;
+}
+
+.hidden-text {
+  position: absolute;
+  font-size: 30px;
+  color: transparent;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(180deg);
+  text-align: center;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+#nav-toggle:hover .hidden-text {
+  transform: rotate(360deg) translate(-50%, -50%);
+  color: white;
+  opacity: 1;
+}
+
+#nav-toggle:active {
+  transform: translateX(-50%) scale(0.96);
+}
+
+body[data-nav=true] > #nav-toggle {
+  background-color: rgb(17, 24, 48);
+}
+
+body:not([data-nav=true]) > #nav-toggle:hover > .open {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+body[data-nav=true] > #nav-toggle > .close {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+@media (max-width: 800px) {
+  body[data-nav=true] > main {
+    transform: translateY(-100%);
+  }
+  nav {
+    height: 100vh;
+  }
+  #nav-links {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  #nav-links .nav-link-image {
+    width: 35vw;
+    height: 15rem;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0px;
+  background-color: black;
+}
+
+main {
+  background-image: url("../landing/background.jpg");
+  background-position: center 0%;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  overflow: hidden;
+  place-items: center;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  transition: transform 500ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
+}/*# sourceMappingURL=skills.css.map */
