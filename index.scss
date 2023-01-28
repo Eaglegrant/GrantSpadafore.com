@@ -100,7 +100,7 @@
 }
 
 main {
-  background-image: url("/landing/background.jpg");
+  background-image: url("/docs/landing/background.jpg");
   background-position: center 0%;
   background-size: cover;
   height: 100vh;
@@ -196,9 +196,11 @@ nav {
   
   .nav-link{
     text-decoration: none;
-    :hover{
-      :nth-child(0), :nth-child(1){
+    :hover:nth-child(1),:hover:nth-child(2){
         transform: scale(1.1);
+        .nav-link-label{
+          transform: scale(1.1);
+        }
         transition: transform 300ms;
       }
     }
@@ -207,6 +209,7 @@ nav {
     color: white;
   font-size: 1.25rem;
   margin: 0rem;
+  transition: transform 300ms;
   text-transform: uppercase;
   }
   .nav-link-image{
@@ -214,13 +217,15 @@ nav {
   aspect-ratio: 1.8 / 1;
   border: 1px solid red;
   border-radius: 0.5rem;
+  transform: scale(1);
+  transition: transform 300ms;
   margin-top: 0.75rem;
   object-fit: cover;
   :hover{
     border: 5px solid red;
   }
   }
-}
+
 
 body[data-nav="true"] > nav > #nav-links{
   transform: translateY(0%) scale(1);
