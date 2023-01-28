@@ -1,0 +1,28 @@
+{
+  "name": "@codersrank/skills-chart",
+  "version": "0.9.21",
+  "description": "CodersRank skills chart widget",
+  "main": "cjs/codersrank-skills-chart.js",
+  "module": "esm/codersrank-skills-chart.js",
+  "jsnext:main": "esm/codersrank-skills-chart.js",
+  "browser": "esm/codersrank-skills-chart.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codersrank-org/skills-chart-widget.git"
+  },
+  "author": "CodersRank Ltd.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codersrank-org/skills-chart-widget/issues"
+  },
+  "homepage": "https://github.com/codersrank-org/skills-chart-widget#readme",
+  "keywords": [
+    "codersrank",
+    "skills",
+    "profile",
+    "cv",
+    "web component",
+    "chart",
+    "svg"
+  ]
+}

@@ -1,0 +1,327 @@
+@import "../variables";
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  //border: 1px solid red;
+}body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0px;
+  background-color: black;
+}
+
+.rubik-font {
+  font-family: "Rubik", sans-serif;
+}
+.circle-container {
+  $particleNum: 200;
+  $particleColor: hsl(180, 100%, 80%);
+
+  position: absolute;
+  transform: translateY(-10vh);
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  .circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    mix-blend-mode: screen;
+    background-image: radial-gradient(
+      hsl(180, 100%, 80%),
+      hsl(180, 100%, 80%) 10%,
+      hsla(180, 100%, 80%, 0) 56%
+    );
+
+    animation: fadein-frames 200ms infinite, scale-frames 2s infinite;
+
+    @keyframes fade-frames {
+      0% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.7;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes scale-frames {
+      0% {
+        transform: scale3d(0.4, 0.4, 1);
+      }
+
+      50% {
+        transform: scale3d(2.2, 2.2, 1);
+      }
+
+      100% {
+        transform: scale3d(0.4, 0.4, 1);
+      }
+    }
+  }
+
+  $particleBaseSize: 8;
+
+  @for $i from 1 through $particleNum {
+    &:nth-child(#{$i}) {
+      $circleSize: random($particleBaseSize);
+      width: $circleSize + px;
+      height: $circleSize + px;
+
+      $startPositionY: random(10) + 100;
+      $framesName: "move-frames-" + $i;
+      $moveDuration: 28000 + random(9000) + ms;
+
+      animation-name: #{$framesName};
+      animation-duration: $moveDuration;
+      animation-delay: random(37000) + ms;
+
+      @keyframes #{$framesName} {
+        from {
+          transform: translate3d(random(100) + vw, $startPositionY + vh, 0);
+        }
+
+        to {
+          transform: translate3d(random(100) + vw, -$startPositionY - random(30) + vh, 0);
+        }
+      }
+
+      .circle {
+        animation-delay: random(4000) + ms;
+      }
+    }
+  }
+}
+
+main {
+  background-image: url("../landing/background.jpg");
+  background-position: center 0%;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  transition: transform 500ms cubic-bezier(.13,.53,.38,.97);
+  .title{
+    font-size: $title;
+    font-weight: 700;
+    margin-top: 15vh;
+    color: white;
+  }
+}
+.lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  margin: auto;
+  width: 90vw;
+}
+.line {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  visibility: visible;
+  top: 0;
+  left: 50%;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 15vh;
+    width: 100%;
+    top: -50%;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
+    animation: drop 7s 0s infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+  }
+  &:nth-child(1) {
+    margin-left: -25%;
+    &::after {
+      animation-delay: 2s;
+    }
+  }
+  &:nth-child(3) {
+    margin-left: 25%;
+    &::after {
+      animation-delay: 2.5s;
+    }
+  }
+}
+@keyframes drop {
+  0% {
+    top: -50%;
+  }
+  100% {
+    top: 110%;
+  }
+};
+body[data-nav="true"] > main {
+  transform: translateY(-50%);
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 50vh;
+  width: 100%;
+  align-items: center;
+  position: absolute;
+  bottom: 0px;
+  left:0%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+#nav-links {  
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-self:flex-start;
+  gap: 2rem;
+  margin-top: 2rem;
+  align-items: center;
+  transform: translateY(70%) scale(0.9);
+  transition: transform 500ms cubic-bezier(.13,.53,.38,.97); 
+  
+  .nav-link{
+    text-decoration: none;
+    :hover{
+      :nth-child(0), :nth-child(1){
+        transform: scale(1.1);
+        transition: transform 300ms;
+      }
+    }
+  }
+  .nav-link-label{
+    color: white;
+  font-size: 1.25rem;
+  margin: 0rem;
+  text-transform: uppercase;
+  }
+  .nav-link-image{
+    width:22vw;
+  aspect-ratio: 1.8 / 1;
+  border: 1px solid red;
+  border-radius: 0.5rem;
+  margin-top: 0.75rem;
+  object-fit: cover;
+  :hover{
+    border: 5px solid red;
+  }
+  }
+}
+
+body[data-nav="true"] > nav > #nav-links {
+  transform: translateY(0%) scale(1);
+}
+#nav-toggle {
+  height: 5rem;
+  width: 5rem;
+  position: fixed;
+  z-index: 3;
+  left: 50%;
+  bottom: 3rem;
+  transform: translateX(-50%);
+  background-color: rgb(25,25,25);
+  background-image: url("../landing/arrow.png");
+  background-position: center;
+  background-size: cover;
+  background-image: none;
+  border: none;
+  border-radius: 5rem;
+  outline: none;
+  box-shadow: 0rem 0rem 4rem rgba(0 0 0 / 35%);
+  cursor: pointer;
+  transition: transform, background-color;
+  transition-timing-function: ease;
+  transition-duration: 400ms;
+  i{
+    
+  }
+}
+.hidden-text {
+  position: absolute;
+  font-size: 30px;
+  color: transparent;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(180deg);
+  text-align: center;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+#nav-toggle:hover .hidden-text{
+  transform: rotate(360deg) translate(-50%, -50%);
+  color: white;
+    opacity: 1;
+}
+
+#nav-toggle:active {
+  transform: translateX(-50%) scale(0.96);
+}
+
+body[data-nav="true"] > #nav-toggle {
+  background-color: rgb(17, 24, 48);
+}
+
+body:not([data-nav="true"]) > #nav-toggle:hover > .open {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+body[data-nav="true"] > #nav-toggle > .close {
+  opacity: 1;
+  transform: translate(-60%, -50%) scale(1);
+}
+.skills{
+  width: 50vw;
+}
+codersrank-skills-chart {
+  --legend-text-color: red;
+  --legend-font-size: 12px;
+  --svg-width: 50vw;
+  --svg-height: 50vh;
+}
+@media (max-width: 800px) {
+  body[data-nav="true"] > main {
+    transform: translateY(-100%);
+  }
+  nav{
+    height: 100vh;
+  }
+  #nav-links {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    .nav-link-image{
+      width: 35vw;
+      height: 15rem;
+    }
+  }
+  .skills{
+    width: 100vw;
+  }
+  codersrank-skills-chart {
+    --svg-width: 100vw;
+    --svg-height: 50vh;
+  }
+}
