@@ -111,12 +111,6 @@ main {
   position: relative;
   z-index: 2;
   transition: transform 500ms cubic-bezier(.13,.53,.38,.97);
-  .title{
-    font-size: $title;
-    font-weight: 700;
-    margin-top: 15vh;
-    color: white;
-  }
 }
 .lines {
   position: absolute;
@@ -228,7 +222,8 @@ nav {
   }
 }
 
-body[data-nav="true"] > nav > #nav-links {
+body[data-nav="true"] > nav > #nav-links,
+ {
   transform: translateY(0%) scale(1);
 }
 #nav-toggle {
@@ -252,9 +247,19 @@ body[data-nav="true"] > nav > #nav-links {
   transition: transform, background-color;
   transition-timing-function: ease;
   transition-duration: 400ms;
-  i{
-    
-  }
+}
+.title{
+  height:10rem;
+  width: 100%;
+  margin: auto;
+  position: fixed;
+  z-index: 3;
+  text-align: center;
+  top: 3rem;
+  color: $primary;
+  font-size: $title;
+  font-weight: 700;
+  transition: transform 500ms
 }
 .hidden-text {
   position: absolute;
@@ -289,7 +294,7 @@ body:not([data-nav="true"]) > #nav-toggle:hover > .open {
 
 body[data-nav="true"] > #nav-toggle > .close {
   opacity: 1;
-  transform: translate(-60%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
 }
 .skills{
   width: 50vw;
