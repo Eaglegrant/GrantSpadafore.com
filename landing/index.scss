@@ -222,8 +222,7 @@ nav {
   }
 }
 
-body[data-nav="true"] > nav > #nav-links,
- {
+body[data-nav="true"] > nav > #nav-links{
   transform: translateY(0%) scale(1);
 }
 #nav-toggle {
