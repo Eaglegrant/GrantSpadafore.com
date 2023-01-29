@@ -262,6 +262,7 @@ codersrank-skills-chart {
 @media (max-width: 800px) {
   .title{
     font-size: $title-mobile;
+    margin-top: -5.5vh;
   }
   .text{
     p{
@@ -275,14 +276,8 @@ codersrank-skills-chart {
         }
       }
     }
-      .magic-text{
-        font-size: $title-mobile;
-      }
+    
   }
-    .magic-text{
-      font-size: $title-mobile;
-    }
-  
   .skills{
     width: 100vw;
   }
@@ -291,11 +286,26 @@ codersrank-skills-chart {
     --svg-height: 50vh;
   }
 }
+
 @media (max-width: 480px) {
+  .title{
+    font-size: $title-tiny;
+  }
   .text{
     margin: 0 8vw 0 0;
+    p{
+      font-size: 24px;
+    }
     .magic{
       margin-left: -12.5vw;
+      .magic-star{
+        :nth-child(1){
+          margin-left: 465%;
+          margin-top: -25%;
         }
+      }
+    }
+
   }
+    
 }

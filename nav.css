@@ -6,10 +6,10 @@ nav {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   height: 50vh;
   width: 100%;
-  align-items: center;
+  align-items: flex-start;
   position: absolute;
   bottom: 0px;
   left: 0%;
@@ -25,7 +25,6 @@ nav {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-self: flex-start;
   gap: 2rem;
   margin-top: 2rem;
   align-items: center;
@@ -52,7 +51,7 @@ nav {
 }
 
 .nav-link-image {
-  width: 22vw;
+  width: 20vw;
   aspect-ratio: 1.8/1;
   border: 1px solid red;
   border-radius: 0.5rem;
@@ -76,7 +75,7 @@ body[data-nav=true] > nav > #nav-links {
   position: fixed;
   z-index: 3;
   left: 50%;
-  bottom: 3rem;
+  bottom: 10vh;
   transform: translateX(-50%);
   background-color: rgb(25, 25, 25);
   background-image: url("arrow.png");
@@ -129,21 +128,31 @@ body[data-nav=true] > #nav-toggle > .close {
   transform: translate(-50%, -50%) scale(1);
 }
 
+@media (max-height: 700px) {
+  #nav-links {
+    gap: 1rem;
+  }
+  #nav-links .nav-link-image {
+    width: 20vw;
+    height: 20vh;
+  }
+}
 @media (max-width: 800px) {
   body[data-nav=true] > main {
-    transform: translateY(-85%);
+    transform: translateY(-100%);
   }
   nav {
-    height: 85vh;
+    height: 100vh;
   }
   #nav-links {
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 2rem;
+    margin-top: 25vh;
   }
   #nav-links .nav-link-image {
     width: 35vw;
-    height: 15rem;
+    height: 15vh;
   }
 }/*# sourceMappingURL=nav.css.map */
