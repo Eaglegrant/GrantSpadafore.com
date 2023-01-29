@@ -120,8 +120,8 @@
   }
 main {
   background-image: url("background.jpg");
-  background-position: center 0%;
-  background-size: cover;
+  background-position: center;
+  background-size:auto;
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -142,7 +142,8 @@ main {
       width:2rem;
       height:2rem;
       :nth-child(1){
-        margin-left: 1273%;
+        margin-left: 1330%;
+        margin-top: 5%;
       }
       animation: scale 3500ms ease linear;
       svg{
@@ -160,10 +161,10 @@ main {
   }
  
   p{
-    color: $secondary;
+    color: green;
     font-size: $title;
     width: 50vw;
-    font-weight: 400;
+    font-weight: 700;
     text-align: center;
     margin: 0 auto;
     margin-top: 25vh;
@@ -259,11 +260,42 @@ codersrank-skills-chart {
   --svg-height: 50vh;
 }
 @media (max-width: 800px) {
+  .title{
+    font-size: $title-mobile;
+  }
+  .text{
+    p{
+      font-size: $title-mobile;
+    }
+    .magic{
+      .magic-star{
+        :nth-child(1){
+          margin-left: 812%;
+          margin-top: -10%;
+        }
+      }
+    }
+      .magic-text{
+        font-size: $title-mobile;
+      }
+  }
+    .magic-text{
+      font-size: $title-mobile;
+    }
+  
   .skills{
     width: 100vw;
   }
   codersrank-skills-chart {
     --svg-width: 100vw;
     --svg-height: 50vh;
+  }
+}
+@media (max-width: 480px) {
+  .text{
+    margin: 0 8vw 0 0;
+    .magic{
+      margin-left: -12.5vw;
+        }
   }
 }

@@ -131,10 +131,10 @@ body[data-nav=true] > #nav-toggle > .close {
 
 @media (max-width: 800px) {
   body[data-nav=true] > main {
-    transform: translateY(-100%);
+    transform: translateY(-85%);
   }
   nav {
-    height: 100vh;
+    height: 85vh;
   }
   #nav-links {
     flex-direction: row;
