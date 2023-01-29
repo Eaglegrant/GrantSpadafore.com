@@ -1,0 +1,17 @@
+@import "variables";
+.title{
+  position: sticky;
+  z-index: 3;
+  width: 100vw;
+  text-align: center;
+  justify-self: center;
+  align-self: center;
+  top: -6rem;
+  color: $primary;
+  font-size: $title;
+  background-color: $background;
+  font-weight: 700;
+  transition: transform 500ms;
+  margin-bottom: 5rem;
+}
+

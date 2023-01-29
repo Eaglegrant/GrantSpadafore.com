@@ -250,15 +250,7 @@ main {
   font-weight: 700;
   transition: transform 500ms
 }
-.skills{
-  width: 50vw;
-}
-codersrank-skills-chart {
-  --legend-text-color: red;
-  --legend-font-size: 12px;
-  --svg-width: 50vw;
-  --svg-height: 50vh;
-}
+
 @media (max-width: 800px) {
   .title{
     font-size: $title-mobile;

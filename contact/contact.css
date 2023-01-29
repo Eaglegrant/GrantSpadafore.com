@@ -156,6 +156,23 @@ body[data-nav=true] > #nav-toggle > .close {
     height: 15vh;
   }
 }
+.title {
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 3;
+  width: 100vw;
+  text-align: center;
+  justify-self: center;
+  align-self: center;
+  top: -6rem;
+  color: rgb(230, 240, 255);
+  font-size: 4rem;
+  background-color: rgb(45, 45, 50);
+  font-weight: 700;
+  transition: transform 500ms;
+  margin-bottom: 5rem;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -169,18 +186,30 @@ body {
   background-color: black;
 }
 
+.content {
+  height: 100vh;
+  width: 100vw;
+  padding: 8rem;
+  display: flex;
+  flex-direction: column;
+}
+
 main {
   background-image: url("../landing/background.jpg");
   background-position: center 0%;
   background-size: cover;
   height: 100vh;
   width: 100vw;
+  padding: 5vw;
   display: flex;
+  flex-direction: column;
   overflow: hidden;
   place-items: center;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   position: relative;
+  overflow-y: scroll;
+  padding-bottom: 10rem;
   z-index: 2;
   transition: transform 500ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
 }/*# sourceMappingURL=contact.css.map */

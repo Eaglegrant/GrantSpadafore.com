@@ -1,5 +1,6 @@
 @import "../variables";
 @import "../nav.scss";
+@import "../header.scss";
 *{
   margin: 0;
   padding: 0;
@@ -10,18 +11,30 @@
   width: 100vw;
   margin: 0px;
   background-color: black;
-}main {
-    background-image: url("../landing/background.jpg");
-    background-position: center 0%;
-    background-size: cover;
-    height: 100vh;
+}
+.content{
+  height: 100vh;
     width: 100vw;
+    padding:8rem;
     display: flex;
-    overflow: hidden;
-    place-items: center;
-    align-items: flex-start;
-    justify-content: center;
-    position: relative;
-    z-index: 2;
-    transition: transform 500ms cubic-bezier(.13,.53,.38,.97);
+    flex-direction: column;
+}main {
+  background-image: url("../landing/background.jpg");
+  background-position: center 0%;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  padding: 5vw;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  place-items: center;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow-y: scroll;
+  padding-bottom: 10rem;
+  z-index: 2;
+  transition: transform 500ms cubic-bezier(.13,.53,.38,.97);
+  
 }

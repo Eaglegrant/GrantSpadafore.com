@@ -1,5 +1,6 @@
 @import "../variables";
 @import "../nav.scss";
+@import "../header.scss";
 *{
   margin: 0;
   padding: 0;
@@ -11,18 +12,48 @@
   margin: 0px;
   background-color: black;
 }
+.content{
+  height: 100vh;
+    width: 100vw;
+    padding:8rem;
+    display: flex;
+    flex-direction: column;
+}
 main {
     background-image: url("../landing/background.jpg");
     background-position: center 0%;
     background-size: cover;
     height: 100vh;
     width: 100vw;
+    padding: 5vw;
     display: flex;
+    flex-direction: column;
     overflow: hidden;
     place-items: center;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     position: relative;
+    overflow-y: scroll;
+    padding-bottom: 10rem;
     z-index: 2;
     transition: transform 500ms cubic-bezier(.13,.53,.38,.97);
+    
+}
+
+.chart{
+  border: 1rem solid grey;
+  border-radius: 10px;
+  padding:0;
+  width: 100%;
+  background-color: grey;
+    codersrank-skills-chart {
+    --legend-text-color: red;
+    --label-text-color: white;
+    --legend-font-size: 12px;
+    --legend-font-family: "Rubik", sans-serif;
+    --legend-font-weight: 400;
+    --chart-bg-color:grey;
+    --axis-bg-color: white;
+    --svg-height: 60vh;
+  }
 }
