@@ -1,5 +1,6 @@
 @import "../variables";
 @import "../nav.scss";
+@import "../header.scss";
 *{
   margin: 0;
   padding: 0;
@@ -10,6 +11,14 @@
   width: 100vw;
   margin: 0px;
   background-color: black;
+}
+.content{
+  height: 100vh;
+    width: 100vw;
+    padding:0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .circle-container {
   $particleNum: 200;
@@ -159,15 +168,33 @@ main {
     }
     
   }
- 
+  .magic-text{
+    animation: background-pan 3s linear infinite;
+    background: linear-gradient(
+      to right,
+      $purple,
+      $violet,
+      $pink,
+      $purple
+    );
+    background-size: 200%;
+      -webkit-background-clip:text;
+      background-clip:text;
+      -webkit-text-fill-color:transparent;
+      white-space:nowrap;
+  }
+  .text{
+    width: 100vw;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
   p{
     color: green;
     font-size: $title;
-    width: 50vw;
+    width: 50%;
     font-weight: 700;
     text-align: center;
-    margin: 0 auto;
-    margin-top: 25vh;
         .magic-text{
       animation: background-pan 3s linear infinite;
       background: linear-gradient(
@@ -237,24 +264,10 @@ main {
     top: 110%;
   }
 };
-.title{
-  height:10rem;
-  width: 100%;
-  margin: auto;
-  position: fixed;
-  z-index: 3;
-  text-align: center;
-  top: 3rem;
-  color: $primary;
-  font-size: $title;
-  font-weight: 700;
-  transition: transform 500ms
-}
 
 @media (max-width: 800px) {
   .title{
     font-size: $title-mobile;
-    margin-top: -5.5vh;
   }
   .text{
     p{
@@ -284,15 +297,13 @@ main {
     font-size: $title-tiny;
   }
   .text{
-    margin: 0 8vw 0 0;
     p{
-      font-size: 24px;
+      font-size: 20px;
     }
     .magic{
-      margin-left: -12.5vw;
       .magic-star{
         :nth-child(1){
-          margin-left: 465%;
+          margin-left: 380%;
           margin-top: -25%;
         }
       }
