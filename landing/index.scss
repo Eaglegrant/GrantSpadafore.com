@@ -103,14 +103,6 @@
     }
   }
 }
-@keyframes background-pan{
-  from{
-    background-position: 0% center;
-  }
-  to{
-    background-position: -200%,center;
-  }
-}
 @keyframes scale {
   from,to{
     transform:scale(0);
@@ -168,21 +160,6 @@ main {
     }
     
   }
-  .magic-text{
-    animation: background-pan 3s linear infinite;
-    background: linear-gradient(
-      to right,
-      $purple,
-      $violet,
-      $pink,
-      $purple
-    );
-    background-size: 200%;
-      -webkit-background-clip:text;
-      background-clip:text;
-      -webkit-text-fill-color:transparent;
-      white-space:nowrap;
-  }
   .text{
     width: 100vw;
     display: flex;
@@ -223,7 +200,7 @@ main {
 }
 .line {
   position: absolute;
-  width: 1px;
+  width: 3px;
   height: 100%;
   visibility: visible;
   top: 0;
@@ -239,20 +216,20 @@ main {
     top: -50%;
     left: 0;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
-    animation: drop 7s 0s infinite;
+    animation: drop 6s 0s infinite;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
   }
   &:nth-child(1) {
     margin-left: -25%;
     &::after {
-      animation-delay: 2s;
+      animation-delay: 1s;
     }
   }
   &:nth-child(3) {
     margin-left: 25%;
     &::after {
-      animation-delay: 2.5s;
+      animation-delay: 1.5s;
     }
   }
 }
