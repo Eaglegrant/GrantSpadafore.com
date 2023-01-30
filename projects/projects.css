@@ -137,7 +137,7 @@ body[data-nav=true] > #nav-toggle > .close {
     height: 20vh;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   body[data-nav=true] > main {
     transform: translateY(-100%);
   }
@@ -157,20 +157,17 @@ body[data-nav=true] > #nav-toggle > .close {
   }
 }
 .title {
-  position: -webkit-sticky;
-  position: sticky;
-  z-index: 3;
-  width: 100vw;
+  margin-top: 0rem;
+  width: 100%;
+  height: 100px;
+  padding: 20px 0;
   text-align: center;
-  justify-self: center;
-  align-self: center;
-  top: -6rem;
-  color: rgb(230, 240, 255);
+  justify-content: center;
+  position: fixed;
+  z-index: 3;
+  margin-bottom: 80px;
   font-size: 4rem;
   background-color: rgb(45, 45, 50);
-  font-weight: 700;
-  transition: transform 500ms;
-  margin-bottom: 5rem;
 }
 
 .magic-text {
@@ -201,16 +198,25 @@ body[data-nav=true] > #nav-toggle > .close {
     background-position: -200%, center;
   }
 }
-@media (max-width: 800px) {
-  .title {
-    font-size: 2.5rem;
-  }
+::-webkit-scrollbar {
+  width: clamp(10px, 1vw, 20px);
 }
-@media (max-width: 480px) {
-  .title {
-    font-size: 1.5rem;
-  }
+
+::-webkit-scrollbar-track {
+  margin-top: 100px;
+  background: #f1f1f1;
 }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -225,11 +231,12 @@ body {
 }
 
 .content {
-  height: 100vh;
+  height: 90vh;
   width: 100vw;
-  padding: 8rem;
+  padding: 4rem;
   display: flex;
   flex-direction: column;
+  align-content: center;
 }
 
 main {
@@ -238,16 +245,28 @@ main {
   background-size: cover;
   height: 100vh;
   width: 100vw;
-  padding: 5vw;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  overflow-y: scroll;
   place-items: center;
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow-y: scroll;
   padding-bottom: 10rem;
   z-index: 2;
   transition: transform 500ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
+}
+
+@media (max-width: 800px) {
+  .content {
+    padding: 2rem;
+    padding-top: 4rem;
+  }
+}
+@media (max-width: 800px) and (max-width: 480px) {
+  .content {
+    padding: 0.5rem;
+    padding-top: 4rem;
+  }
 }/*# sourceMappingURL=projects.css.map */
