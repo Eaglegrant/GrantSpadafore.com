@@ -40,6 +40,30 @@ main {
   z-index: 2;
   transition: transform 500ms cubic-bezier(.13,.53,.38,.97);
 }
+.hero {
+  padding-top: 6vh;
+  background-color: grey;
+  .titleH {
+    font-size: $title;
+    font-weight: 700;
+    text-align: center;
+    padding: clamp(4rem, 10vw, 6rem) 0;
+  }
+}
+.main {
+  background-color: gainsboro;
+  font-size: $body;
+  font-weight: bold;
+  padding: 2rem;
+  .section{
+    font-size: $subtitle;
+  margin: 2rem;
+  line-height: 2rem;
+  li {
+    margin-left: 2rem;
+  }
+  }
+}
 @media (max-width:800px) {
   .content{
     padding: 2rem;
@@ -49,6 +73,9 @@ main {
     .content{
       padding: .5rem;
       padding-top: 4rem;
+    }
+    .section {
+      font-size: 12px;
     }
   }
 }
